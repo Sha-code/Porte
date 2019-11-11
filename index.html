@@ -11,33 +11,50 @@
   <div class="panels">
     <div class="panel panel1">
       <p>This game is very simple. I created it because it is my first project as a converted developer. I hope you will enjoy! </p>
-      <p>Rules</p>      
+      <h1>Rules</h1>      
       <p>The goal is to find the right number between 0 and 1000. If You have made a mistake the game tells you whether the number to be found is larger or smaller than the one you have proposed until resolution.
         (spoiler: small end reward... &#128580; ).</p>
     </div>
     <div class="panel panel2">
       <p>It's your time ! Good game ! </p>
-      <p>Game</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore possimus sequi aperiam ratione reprehenderit odio libero corrupti quaerat asperiores commodi quos illo illum architecto quidem eius, ex impedit enim! Soluta.</p>
+      <h1>Game</h1>
+      <div class="form">            
+        <div class="form-input">
+          <label for="answer">Choose a number between 1 and 1000: </label>
+          <input type="text" name="answer" id="answer">
+        </div>
+        <div class="form-button">
+            <button id='buttonValid'> Ok !</button>
+        </div>
+        <div class='form-button' id='message'></div>
+
+      </div>
     </div>
   </div>
-
+  
+  <script src="jeu.js"></script>
   <script>
     const panels = document.querySelectorAll('.panel');
 
     function toggleOpen() {
       console.log('Hello');
-      this.classList.toggle('open');
+      this.classList.add('open');
+    }
+    function toggleClose() {
+      this.classList.remove('open');
     }
 
     function toggleActive(e) {
       console.log(e.propertyName);
-      if (e.propertyName.includes('flex')) {
-        this.classList.toggle('open-active');
+      if (e.propertyName.includes('flex') && this.classList.contains('open')) {
+        this.classList.add('open-active');
+      } else if (e.propertyName.includes('flex')) {
+        this.classList.remove('open-active');
       }
     }
 
-    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('mouseover', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('mouseleave', toggleClose));
     panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
   </script>
 

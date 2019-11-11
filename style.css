@@ -2,7 +2,7 @@ body {
 margin: 0;
 box-sizing: border-box;
 background: #ffc600;
-font-family: 'helvetica neue';
+font-family: 'Amatic SC', cursive;
 font-size: 20px;
 font-weight: 200;
 }
@@ -40,8 +40,43 @@ display: flex;
 .panel1 { 
     background-color: #f39b7b;
 }
+
 .panel2 {
     background-color: #d297ff;
+}
+
+label {
+    font-family: 'Kalam', cursive;
+    font-size: 1.5em;
+}
+
+.form {
+    flex-direction: column;
+}
+
+.form-button button{
+    background-color: #f39b7b;
+    border-radius: 1em;
+    color: white;
+    font-size: 1em;
+}
+.form-button button:focus {
+    outline: none;
+}
+.form-button button:hover {
+    background-color: #ff8d64;
+}
+
+.form-input input {
+    border-radius: 1em;
+    font-size: larger;
+    background-color: #f39b7b;
+    width: 4em;
+    color: white;
+    padding-left: 1em;
+}
+.form-input input:focus {
+    outline: none;
 }
 
 
@@ -61,10 +96,12 @@ align-items: center;
 .panel > *:last-child { transform: translateY(100%); }
 .panel.open-active > *:last-child { transform: translateY(0); }
 
+.panel h1 {
+font-size: 4em;
+}
 .panel p {
-text-transform: uppercase;
-font-family: 'Amatic SC', cursive;
-font-size: 2em;
+font-family: 'Kalam', cursive;
+font-size: 1.2em;
 }
 
 .panel p:nth-child(2) {
@@ -78,6 +115,6 @@ font-size: 20px;
 
 @media only screen and (max-width: 600px) {
 .panel p {
-font-size: 1em;
+font-size: 2em;
 }
 }
