@@ -5,6 +5,9 @@
   <title>HTML5 Canvas</title>
 </head>
 <body>
+    <header>
+        <h1>Try to hold and move inside the window... TADAAAMMM ! 🥳</h1>
+    </header>
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
   const canvas = document.querySelector('#draw');
@@ -36,7 +39,7 @@
       hue = 0;
     }
 
-    if ( ctx.lineWidth >= 100 ||  ctx.lineWidth <= 1 ){
+    if ( ctx.lineWidth >= 70 ||  ctx.lineWidth <= 1 ){
       direction = !direction;
     }
     if (direction) {
@@ -61,6 +64,13 @@
 <style>
   html, body {
     margin: 0;
+    background-color: #f9e1d9;
+  }
+  h1{
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #d297ff;
+      text-align: center;
   }
 </style>
 

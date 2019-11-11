@@ -1,9 +1,7 @@
 var app = {
     x : 0,
     init: function() {
-        console.log('app.init'); 
         app.x = Math.floor(Math.random() * 1000) + 1 
-        console.log(app.x);
         let button = document.getElementById('buttonValid');
         button.addEventListener("click", app.handleClick);  
         let message = document.getElementById('message');
@@ -19,8 +17,6 @@ var app = {
         let message = document.getElementById('message');
         message.textContent='';
         if ( !isNaN(answer) && Number.isInteger(answer) && answer >= 1 && answer <= 1000) {
-            console.log ('òk');
-            console.log(answer);
             app.isValidAnswer(answer);
         } else {
             let messageP = document.createElement('p');
@@ -31,8 +27,6 @@ var app = {
     },
 
     isValidAnswer: function (userAnswer) {
-        // var x = Math.floor(Math.random() * 1000) + 1 ;
-        // console.log(x);
         let message = document.getElementById('message');
         message.textContent='';
         let messageP = document.createElement('p');
@@ -47,7 +41,7 @@ var app = {
                 message.appendChild(messageP);
                 return false
             } else {
-                messageP.textContent = 'Congratulation ! You find the good one (' + userAnswer + ') !';
+                messageP.textContent = 'Congratulation ! You find the good one (' + userAnswer + ') ! 👏';
                 message.appendChild(messageP);
                 buttonAgain.textContent = 'Play gain ?!';
                 buttonAgain.addEventListener("click", app.init); 
