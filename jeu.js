@@ -53,7 +53,7 @@ var app = {
             } 
     },
      surprise: function () {
-        window.location.replace('surprise.html');
+        window.location.replace('colordraw/index.html');
      }
 
   };
